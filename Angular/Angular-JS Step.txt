@@ -1,0 +1,175 @@
+ANGULAR   JAVASCRIPT   FRAMEWORK   LIBRARY   STEPS 
+-------   ----------   ---------   -------   -----
+
+IMPORTANT :  AngularJS starts automatically when the web page has loaded.
+
+Step 1
+------
+
+Set  The  Angular  JS  Link  In  HTML
+
+Step 2
+------
+ng-app directive defines Angular JS App.
+ng-modal directive binds the value of HTML controls (input, select, textarea) to application data.
+ng-bind directive binds application data to the HTML view.
+
+Exmaple Link : https://www.w3schools.com/angular/tryit.asp?filename=try_ng_intro
+
+Step 3
+------
+
+ng-app Directive is ng-init directive initializes AngularJS
+RunTime And Set Value Using ng-init directive Example ng-app ="" ng-init="firstname='SOHAM'"> <p><span></span>
+
+
+CONTROLLER 
+----------
+----------
+
+	Step 1
+	------
+	Set App Name  example: <div ng-app="myapp">
+	After Set Controller For Specific Use 
+	Example : <div ng-app="myapp" ng-controller="myCtrl">
+
+	Step 2
+	------
+	 Now Inside this Div Tag you have use ng-model directive to use Input Fields Access And Perform Some angular.
+	 And After define ng-model in input fields than after use to show  data at run time effect at fullname label.
+	 Example :
+	 <div ng-app="myapp" ng-controller="myCtrl">
+		 <input type="text" ng-model="fname">
+		 <input type="text" ng-model="lname">
+		 Full Name {{ fname + " " + lname }}
+	 </div> 
+
+	 Step 3 
+	 ------
+
+	 After Main Step is Here To Write Script To Show data which defines ng-model variables
+	 first we have create App Variable after call Controller using controller Variable name and pass parameters in that function and after use this variable in function
+
+	 example : 
+	 <script> 
+	var app = angular.module(myapp, []);
+	app.controller('myCtrl', function($scope){
+		$scope.fname ="Soham";
+		$scope.lname ="Rathod";
+	});
+	 </script>
+
+
+OBJECT
+------
+------
+
+
+Step 1
+------
+Object is Same as JavaScript. here we define object in ng-init directive.
+Exmaple : <div ng-app="" ng-init="person={fname:'soham',lname:'Rathod'}">
+
+
+Step 2
+------
+ Now Here We Use of Object to display data..using Expression {{}}
+
+ exmple : <p> The Name is {{ person.lname }} </p>     // HERE person is object name and its value
+
+Step 3
+------
+Here We can Use ng-bind directive of angular to display object data
+Example: <span ng-bind="person.fname"></span>
+
+
+
+ARRAY
+-----
+-----
+
+Step 1
+------
+Here An Array Same as javascript. 
+Here Same We Define Array as Like Object We define ago. 
+Exmaple : <div ng-app="" ng-init="array=[1,10,20,15,21]">
+
+Step 2
+------
+And After Display Array Value As it is object Value Display.
+Example: <p ng-bind="array[2]"></p> <p> {{ array[2] }}</p>
+
+
+DIRECTIVE
+---------
+---------
+
+Step 1
+------
+Adding Built-in Directive Which You Can use to add Functionlity to your application.
+Example: <div ng-app="myapp" w3-test-directive></div>
+
+Step 2
+------
+Now Use this Directive using Script tag to Show Some Custom MSG  Like This.
+
+Full Example: <div ng-app="myapp" w3-test-directive></div>
+<script>
+var app. angular.module("myapp", []);
+
+app.directive("w3TestDirective", function() {
+	return {
+		template: " I Was Made in a Directive Constructor !!"
+	};
+});
+</script>
+
+
+DIRECTIVE DEFINATION :: ANGULAR JS lets you extend HTML with new attributes called DIRECTIVES.
+
+UnderStanding Directives
+
+* ng-app   :-> the ng-app directive initializes an AngularJS Application.
+* ng-init  :-> ng-init directive initializes Application Data.
+* ng-model :-> ng-model binds the value of HTML Controls input,select,textarea to application Data.
+
+
+
+REPEATING HTML ELEMENTS
+-----------------------
+Here is the repeating the HTML Elements in loop using  ng-repeat directive.
+Full Example:
+			<div ng-app="" ng-init="names=['jani','hege','kai']">
+				<ul>
+					<li ng-repeat="x in names">
+					{{ x }}
+					</li>
+				</ul>
+			</div>
+		
+
+NG-MODEL
+--------
+--------
+
+ng-model directive adds/removes the following classes, according to the status of the form field:
+* ng-empty
+* ng-not-empty
+* ng-touched
+* ng-untouched
+* ng-valid
+* ng-invalid
+* ng-dirty
+* ng-pending
+* ng-pristine
+
+Full Example:
+	<form ng-app="" name="form" ng-init="mytext ='s@gmail.com'">
+	Email :
+	<input type="email" name="UserEmail" ng-model="mytext" required>
+	<p>STATUS</p>
+	<p>Valid : {{ form.UserEmail.$valid }} (if true, the value meet all criteria).</p>
+	<p>Dirty : {{ form.UserEmail.$dirty }} (if true, the value has been changed.)</p>
+	<p>Touched :{{ form.UserEmail.$touched }} (if true, the field has been in focus).</p>
+	</form>
+	
